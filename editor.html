@@ -118,8 +118,6 @@
                                 <option value="#00FFFF">Cyan</option>
                             </select>
                         </button>
-                        <!--<button type="button" class="btn btn-default btn-md" id="btnOrderedList" title="有序列表"><span class="glyphicon glyphicon-sort-by-attributes" aria-hidden="true"></span></button>-->
-                        <!--<button type="button" class="btn btn-default btn-md" id="btnUnOrderedList" title="无序列表"><span class="glyphicon glyphicon-random" aria-hidden="true"></span></button>-->
                         <button type="button" class="btn btn-default btn-md" id="btnHighlight" title="高亮"><span class="glyphicon glyphicon-certificate" aria-hidden="true"></span></button>
                         <button type="button" class="btn btn-default btn-md" id="btnGetHtml" title="获取HTML元素"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
                         <button type="button" class="btn btn-default btn-md" id="btnGetSelected" title="显示文本"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button>
@@ -140,9 +138,7 @@
                     </div>
                 </div>
             </div>
-            <!--<div id="editor_iframe_holder" ></div>-->
             <iframe name="richedit" style="min-height:300px;width:100%;" contenteditable></iframe>
-            <!--<input type="show" name="comments" value="">-->
             <div class="btn-group">
                 <button type="submit" class="btn btn-default">提交</button>
             </div>
@@ -189,18 +185,6 @@
                                 frames["richedit"].document.execCommand("formatblock", false, selectedOption.value);
                             }
                             break;
-
-                            /*
-                        case "btnForecolor":
-                            var forecolor = prompt("What color?","#FF0000");
-                            frames["richedit"].document.execCommand("forecolor",false,forecolor);
-                            break;
-                            */
-                            /*
-                        case "btnBackcolor" :
-                            var backcolor = prompt("What color?","#00FF00");
-                            frames["richedit"].document.execCommand("backcolor",false,backcolor);
-                            break;*/
                         case "btnInsertParagraph":
                             frames["richedit"].document.execCommand("insertparagraph",false,null);
                             break;
@@ -254,24 +238,10 @@
                             if(link) {
                                 frames["richedit"].document.execCommand("createlink",false,link);
                             }
-                            break;
-                        /*case "btnFontFamily" :
-                            var font = prompt("What font? such as Arial,SimSun,Kaiti,Microsoft YaHei,SimLi","Times New Roman");
-                            if(font) {
-                                frames["richedit"].document.execCommand("fontname",false,font);
-                            }
-                            break;*/
+                            break;      
                         case "btnUnlink" :
                             frames["richedit"].document.execCommand("unlink",false,null);
                             break;
-                            /*
-                        case "btnChangeFontSize" :
-                            var size = prompt("What size?(range from one to seven)","7");
-                            if(size) {
-                                frames["richedit"].document.execCommand("fontsize",false,parseInt(size,10));
-                            }
-                            break;
-                            */
                         case "btnGetSelected" :
                             if(frames["richedit"].getSelection) {
                                 alert(frames["richedit"].getSelection().toString());
@@ -304,6 +274,5 @@
                 });
             })();
         </script>
-
     </body>
 </html>
